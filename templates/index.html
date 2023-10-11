@@ -198,40 +198,19 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://i1.wp.com/sevenpie.com/wp-content/uploads/2019/10/UpinIpinOscar.jpg?resize=800%2C600" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Upin Ipin Chapter 2</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <p>⭐⭐⭐</p>
-              <p class="mycomment">Ini coment palsu</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://i1.wp.com/sevenpie.com/wp-content/uploads/2019/10/UpinIpinOscar.jpg?resize=800%2C600" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Upin Ipin Chapter 3</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <p>⭐⭐⭐</p>
-              <p class="mycomment">Ini coment palsu</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="https://i1.wp.com/sevenpie.com/wp-content/uploads/2019/10/UpinIpinOscar.jpg?resize=800%2C600" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Upin Ipin Chapter 4</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <p>⭐⭐⭐</p>
-              <p class="mycomment">Ini coment palsu</p>
-            </div>
-          </div>
-        </div>
+      
       </div>
     </div>
+    <img id="ogImage" alt="Open Graph Image" />
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var ogImageMeta = document.querySelector('meta[property="og:image"]');
+            var ogImageUrl = ogImageMeta ? ogImageMeta.getAttribute("content") : "";
+    
+            var imgElement = document.getElementById("ogImage");
+            imgElement.src = ogImageUrl;
+        });
+    </script>
   </body>
 </html>
