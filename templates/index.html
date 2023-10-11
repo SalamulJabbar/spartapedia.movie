@@ -204,16 +204,37 @@
       
       </div>
     </div>
+  </div>
+  <div class="mycard">
+    <h5 class="card-title" id="ogTitle"></h5>
+    <p class="card-text" id="ogDescription"></p>
     <img id="ogImage" alt="Open Graph Image" />
+    </div>
+  
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var ogImageMeta = document.querySelector('meta[property="og:image"]');
-            var ogImageUrl = ogImageMeta ? ogImageMeta.getAttribute("content") : "";
-    
-            var imgElement = document.getElementById("ogImage");
-            imgElement.src = ogImageUrl;
-        });
+
+      document.addEventListener("DOMContentLoaded", function() {
+        var ogImageMeta = document.querySelector('meta[property="og:image"]');
+      var ogImageUrl = ogImageMeta ? ogImageMeta.getAttribute("content") : "";
+  
+      var imgElement = document.getElementById("ogImage");
+      imgElement.src = ogImageUrl;
+  
+      var ogTitleMeta = document.querySelector('meta[property="og:title"]');
+      var ogDescriptionMeta = document.querySelector('meta[property="og:description"]');
+      
+      var ogTitle = ogTitleMeta ? ogTitleMeta.getAttribute("content") : "";
+      var ogDescription = ogDescriptionMeta ? ogDescriptionMeta.getAttribute("content") : "";
+      
+      // Tampilkan og:title dan og:description di elemen HTML tertentu
+      var titleElement = document.getElementById("ogTitle"); // Mengganti judul dalam elemen dengan ID "ogTitle"
+      titleElement.textContent = ogTitle;
+      
+      var descriptionElement = document.getElementById("ogDescription"); // Mengganti deskripsi dalam elemen dengan ID "ogDescription"
+      descriptionElement.textContent = ogDescription;
+    });
     </script>
+  
   </body>
 </html>
